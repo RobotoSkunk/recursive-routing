@@ -1,5 +1,5 @@
 {
-	"name": "@robotoskunk/recursive-routing",
+	"name": "recursive-routing",
 	"version": "1.0.0",
 	"description": "Recursively configure Express.js routes in a folder structure",
 	"main": "src/index.js",
@@ -31,6 +31,6 @@
 	],
 	"dependencies": { },
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"registry": "https://registry.npmjs.org/"
 	}
 }
