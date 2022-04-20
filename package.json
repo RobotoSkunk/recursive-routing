@@ -1,11 +1,11 @@
 {
-	"name": "recursive-routing",
+	"name": "@robotoskunk/recursive-routing",
 	"version": "1.0.0",
 	"description": "Recursively configure Express.js routes in a folder structure",
 	"main": "src/index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/RobotoSkunk/recursive-routing.git"
+		"url": "git://github.com/RobotoSkunk/recursive-routing.git"
 	},
 	"author": "Edgar Alexis Lima Mercado <contact@robotoskunk.com> (https://robotoskunk.com)",
 	"homepage": "https://github.com/RobotoSkunk/recursive-routing",
@@ -29,5 +29,8 @@
 		"README.md",
 		"LICENSE"
 	],
-	"dependencies": { }
+	"dependencies": { },
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	}
 }
