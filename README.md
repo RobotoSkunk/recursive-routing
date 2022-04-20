@@ -117,18 +117,18 @@ app.listen(3000);
 
 The options of `recursive-routing` are:
 
-| Option              | Type                                        | Default                  | Description                                                                  |
-| ------------------- | ------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------- |
-| `rootDir`           | string                                      | `'./routes'`             | The root directory of routes.                                                |
-| `basePath`          | string                                      | `'/'`                    | The base path of routes.                                                     |
-| `filter`            | function(string)                            | `f => f.endsWith('.js')` | A function that returns `true` if the file should be included in the routes. |
-| `func`              | function(express.application, data, string) | `undefined`              | A function that will be called for every loaded route.                       |
-| `replaceSpacesWith` | string                                      | `'-'`                    | The string that will be used to replace spaces in the route path.            |
-| `keepExtension`     | boolean                                     | `false`                  | If `true`, the extension of the file will be kept.                           |
-| `keepIndex`         | boolean                                     | `false`                  | If `true`, the `index.js` file will be kept as `/index` too.                 |
-| `debug`             | boolean	                                    | `false`                  | If `true`, the debug messages will be printed.                               |
+| Option              | Type                                                | Default                                             | Description                                                                  |
+| ------------------- | --------------------------------------------------- | --------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `rootDir`           | string                                              | `'./routes'`                                        | The root directory of routes.                                                |
+| `basePath`          | string                                              | `'/'`                                               | The base path of routes.                                                     |
+| `filter`            | function(string)                                    | `f => f.endsWith('.js')`                            | A function that returns `true` if the file should be included in the routes. |
+| `mountFunction`     | function(express.Application, data, express.Router) | `(app, data, router) => app.use(data.path, router)` | A function that mounts the routes. |
+| `replaceSpacesWith` | string                                              | `'-'`                                               | The string that will be used to replace spaces in the route path.            |
+| `keepExtension`     | boolean                                             | `false`                                             | If `true`, the extension of the file will be kept.                           |
+| `keepIndex`         | boolean                                             | `false`                                             | If `true`, the `index.js` file will be kept as `/index` too.                 |
+| `debug`             | boolean	                                            | `false`                                             | If `true`, the debug messages will be printed.                               |
 
-In the `func` function, there's a parameter `data` that contains the data of the route. It's an object with the following properties:
+In the `mountFunction` function, there's a parameter `data` that contains the data of the route. It's an object with the following properties:
 
 | Name            | Type     | Description                              |
 | --------------- | -------- | ---------------------------------------- |
@@ -165,8 +165,14 @@ recursiveRouting(app, {
 	'rootDir': './api-routes',
 	'routePrefix': '/api',
 	'filter': f => f.endsWith('.js') || f.endsWith('.ts'),,
-	'func': (app, data) => {
-		console.log(data.fullPath, data.expressRoutes);
+	'mountFunction': (app, data, router) => {
+		console.log(data);
+
+		for (var i in data.expressRoutes) {
+			data.expressRoutes[i] = data.expressRoutes[i].replace(/^\/api/, '');
+		}
+
+		app.use(data.expressRoutes, router);
 	}
 });
 
