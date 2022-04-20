@@ -12,7 +12,9 @@ const defaultOptions = {
 	'rootDir': './routes',
 	'basePath': '/',
 	'filter': f => f.endsWith('.js'),
-	'func': undefined,
+	'mountFunction': (app, data, route) => {
+		app.use(data.expressRoutes, route);
+	},
 	'replaceSpacesWith': '-',
 	'keepExtension': false,
 	'keepIndex': false,
@@ -61,10 +63,7 @@ module.exports = function (app, options = {}) {
 			console.log(data);
 
 		try {
-			if (options.func)
-				options.func(app, data, require(file));
-
-			app.use(routes, require(file));
+			options.mountFunction(app, data, require(file));
 		} catch (e) {
 			const err = new Error(`Error while loading route ${route}`);
 			err.name = 'RouteError';

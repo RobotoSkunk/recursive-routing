@@ -56,10 +56,10 @@ declare namespace recursiveRouting {
 		filter: (file: string) => boolean;
 	
 		/**
-		 * A custom function to process the route data.
-		 * @default undefined
+		 * A function to process the collected data to adding routes to the express app.
+		 * @default (app, data, route) => app.use(route, data.expressRoutes)
 		 */
-		func: (app: Object, data: RouteData, route: Object) => void;
+		mountFunction: (app: express.Application, data: RouteData, route: express.Router) => void;
 	
 		/**
 		 * A string which replaces the route spaces with your chosen delimiter.
