@@ -1,9 +1,12 @@
+/// <reference types="express" />
+import * as express from 'express';
+
 /**
  * Searches for all files in the given directory and subdirectories, then adds them to the given express app.
  * @param app The express app.
  * @param options The options of the function.
  */
-declare function recursiveRouting(app: Object, options?: recursiveRouting.RecursiveRoutingOptions): void;
+declare function recursiveRouting(app: express.Application, options?: recursiveRouting.RecursiveRoutingOptions): void;
 
 declare namespace recursiveRouting {
 	interface RouteData {
