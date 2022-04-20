@@ -19,12 +19,6 @@ const defaultOptions = {
 	'debug': false
 };
 
-/**
- * Searches for all files in the given directory and subdirectories, then adds them to the given express app.
- * @type {function}
- * @param {Object} app The express app.
- * @param {Object} options The options of the function.
- */
 module.exports = function (app, options = {}) {
 	options = Object.assign({}, defaultOptions, options);
 

@@ -1,8 +1,9 @@
 {
 	"name": "recursive-routing",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Recursively configure Express.js routes in a folder structure",
 	"main": "src/index.js",
+	"types": "src/index.d.ts",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/RobotoSkunk/recursive-routing.git"
