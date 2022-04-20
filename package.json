@@ -1,6 +1,6 @@
 {
 	"name": "recursive-routing",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Recursively configure Express.js routes in a folder structure",
 	"main": "src/index.js",
 	"types": "src/index.d.ts",
@@ -28,6 +28,7 @@
 	"files": [
 		"src/",
 		"types/",
+		"tsconfig.json",
 		"README.md",
 		"LICENSE"
 	],
