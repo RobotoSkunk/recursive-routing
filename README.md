@@ -122,7 +122,7 @@ The options of `recursive-routing` are:
 | `rootDir`           | string                                              | `'./routes'`                                                 | The root directory of routes.                                                |
 | `basePath`          | string                                              | `'/'`                                                        | The base path of routes.                                                     |
 | `filter`            | function(string)                                    | `f => f.endsWith('.js')`                                     | A function that returns `true` if the file should be included in the routes. |
-| `mountFunction`     | function(express.Application, data, express.Router) | `(app, data, router) => app.use(data.expressRoutes, router)` | A function that mounts the routes. |
+| `mountFunction`     | function(express.Application, data, express.Router) | `(app, data, router) => app.use(data.expressRoutes, router)` | A function that mounts the routes.                                           |
 | `replaceSpacesWith` | string                                              | `'-'`                                                        | The string that will be used to replace spaces in the route path.            |
 | `keepExtension`     | boolean                                             | `false`                                                      | If `true`, the extension of the file will be kept.                           |
 | `keepIndex`         | boolean                                             | `false`                                                      | If `true`, the `index.js` file will be kept as `/index` too.                 |
