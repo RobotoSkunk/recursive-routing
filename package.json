@@ -27,7 +27,7 @@
 	},
 	"files": [
 		"src/",
-		"/types/",
+		"types/",
 		"README.md",
 		"LICENSE"
 	],
