@@ -27,10 +27,13 @@
 	},
 	"files": [
 		"src/",
+		"types/",
 		"README.md",
 		"LICENSE"
 	],
-	"dependencies": { },
+	"dependencies": {
+		"@types/express": "^4.17.13"
+	},
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
 	}
