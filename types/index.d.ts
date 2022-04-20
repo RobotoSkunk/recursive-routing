@@ -50,10 +50,10 @@ declare namespace recursiveRouting {
 		basePath: string;
 	
 		/**
-		 * The files extensions of the files to use.
-		 * @default ['.js']
+		 * A function that returns a boolean indicating whether the file should be included in the routing.
+		 * @default (file) => file.endsWith('.ts')
 		 */
-		filter: string[];
+		filter: (file: string) => boolean;
 	
 		/**
 		 * A custom function to process the route data.
