@@ -3,6 +3,10 @@ Configure Express.js routes recursively using a directory structure. Very easy t
 
 Inspired in [express-recursive-routes](https://www.npmjs.com/package/express-recursive-routes) by [@megadix](https://github.com/megadix).
 
+[![Npm package license](https://img.shields.io/npm/l/recursive-routing)](https://npmjs.com/package/recursive-routing)
+[![Npm package version](https://badgen.net/npm/v/recursive-routing)](https://npmjs.com/package/recursive-routing)
+[![Npm package monthy downloads](https://badgen.net/npm/dm/recursive-routing)](https://npmjs.com/package/recursive-routing)
+
 ## Installation
 Installation is done using the [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
