@@ -41,49 +41,49 @@ declare namespace recursiveRouting {
 		 * The base path to read routes from.
 		 * @default './routes'
 		 */
-		rootDir: string;
+		rootDir?: string;
 	
 		/**
 		 * The base path to routing with express.
 		 * @default '/'
 		 */
-		basePath: string;
+		basePath?: string;
 	
 		/**
 		 * A function that returns a boolean indicating whether the file should be included in the routing.
 		 * @default (file) => file.endsWith('.ts')
 		 */
-		filter: (file: string) => boolean;
+		filter?: (file: string) => boolean;
 	
 		/**
 		 * A function to process the collected data to adding routes to the express app.
 		 * @default (app, data, route) => app.use(route, data.expressRoutes)
 		 */
-		mountFunction: (app: express.Application, data: RouteData, route: express.Router) => void;
+		mountFunction?: (app: express.Application, data: RouteData, route: express.Router) => void;
 	
 		/**
 		 * A string which replaces the route spaces with your chosen delimiter.
 		 * @default '-'
 		 */
-		replaceSpacesWith: string;
+		replaceSpacesWith?: string;
 	
 		/**
 		 * When true, the files extensions will be added to the route name.
 		 * @default false
 		 */
-		keepExtension: boolean;
+		keepExtension?: boolean;
 	
 		/**
 		 * When true, the index route name will be added to the route path.
 		 * @default false
 		 */
-		keepIndex: boolean;
+		keepIndex?: boolean;
 	
 		/**
 		 * When true, an output log will be printed to the console.
 		 * @default false
 		 */
-		debug: boolean;
+		debug?: boolean;
 	}	
 }
 
